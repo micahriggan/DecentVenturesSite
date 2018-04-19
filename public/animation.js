@@ -57,13 +57,23 @@ function norm( t, a, b ){return ( t - a ) / ( b - a );}
 
 var size = 1024;
 var canvas = document.createElement('canvas');
+var overlay = document.createElement('div');
 canvas.style.position ="fixed";
 canvas.style.zIndex = "-99999";
 canvas.style.top ="0";
 canvas.style.left ="0";
 canvas.width = canvas.height = size;
+
+overlay.style.position ="fixed";
+overlay.style.zIndex = "-99999";
+overlay.style.top ="0";
+overlay.style.left ="0";
+overlay.style.width = overlay.style.height = '100%';
+overlay.style.backgroundColor = 'rgba(0, 0, 0, .05)';
+
 ctx = canvas.getContext('2d');
 document.body.appendChild( canvas );
+document.body.appendChild(overlay);
 
 var vertices;
 function update(){
