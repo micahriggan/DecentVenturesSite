@@ -48,7 +48,7 @@ let apps = [
   {
     name: "Decent Ventures",
     logo: "images/color_logo_transparent.svg",
-    url: "www.decentventures.com",
+    url: "http://www.decentventures.com",
     github: "https://github.com/DecentVentures"
   }
 
