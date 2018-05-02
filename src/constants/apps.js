@@ -45,12 +45,6 @@ let apps = [
    *  github: ""
    *}
    */
-  {
-    name: "Decent Ventures",
-    logo: "images/color_logo_transparent.svg",
-    url: "http://www.decentventures.com",
-    github: "https://github.com/DecentVentures"
-  }
 
 ];
 export default apps;
