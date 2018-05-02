@@ -4,7 +4,7 @@ import "./AppBox.css";
 const AppBox = props => {
   const githubLink = props.github ? (
     <a href={props.github}>
-      <img height="32" src="images/github.png" />
+      <img height="32" src="images/github.svg" />
     </a>
   ) : (
     ""
