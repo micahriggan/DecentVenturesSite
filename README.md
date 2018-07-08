@@ -82,3 +82,8 @@ This is an example post
 
 * Go to the constants file that is being loaded into your page
 * Append an object that has the properties above
+
+
+# Using with s3 bucket, or static file hosting
+If you use something like an s3 bucket, you may need to set the error page as index.html
+This is because you will get a 404 when different links are clicked, since this project uses react-router
