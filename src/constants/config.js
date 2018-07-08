@@ -1,5 +1,7 @@
 module.exports = {
   siteName: 'Decent Ventures',
+  github: 'https://github.com/micahriggan',
+  twitter: 'https://twitter.com/micahriggan',
   pages: [
     {
       name: "Projects",

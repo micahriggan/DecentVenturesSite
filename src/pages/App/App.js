@@ -4,9 +4,8 @@ import { createBrowserHistory } from "history";
 
 import "./App.css";
 import Footer from "../../components/Footer/Footer";
-import Header from "../../components/Header/Header";
-import Apps from "../Apps/Apps";
-import Blog from "../Blog/Blog";
+import Posts from "../Posts/Posts";
+import Blogs from "../Blogs/Blogs";
 import Courses from "../Courses/Courses";
 
 
@@ -18,8 +17,8 @@ class App extends Component {
       <div className="App">
         <Router history={customHistory}>
           <Switch>
-            <Route exact path="/" component={Apps} />
-            <Route exact path="/blog" component={Blog} />
+            <Route exact path="/" component={Posts} />
+            <Route exact path="/blog" component={Blogs} />
             <Route exact path="/courses" component={Courses} />
           </Switch>
         </Router>

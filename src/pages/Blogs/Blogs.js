@@ -1,14 +1,14 @@
 import React from "react";
-import AppList from "../../components/Apps/Apps";
+import Posts from "../../components/Posts/Posts";
 import Header from "../../components/Header/Header";
-import blogs from "../../constants/blog";
+import blogs from "../../constants/blogs";
 export default function(props) {
   const blogLink = url => (url ? <a href={url}>Read More on Medium</a> : "");
 
   return (
     <div>
       <Header path={props.location.pathname} />
-      <AppList list={blogs} action={blogLink} />
+      <Posts list={blogs} action={blogLink} />
     </div>
   );
 }

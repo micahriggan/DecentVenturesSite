@@ -1,4 +1,3 @@
-import logo from "../../resources/logo.svg";
 import React from "react";
 import "./Header.css";
 import config from "../../constants/config";

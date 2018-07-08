@@ -1,13 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 import "./Footer.css";
+import config from "../../constants/config.js";
 
 export default function() {
   return (
     <div class="footer">
-      <a href="https://github.com/DecentVentures">
+      <a href={config.github}>
         <img height="32" src="images/github.svg" />
       </a>
-      <a href="https://twitter.com/micahriggan">
+      <a href={config.twitter}>
         <img height="32" src="images/twitter.svg" />
       </a>
     </div>
