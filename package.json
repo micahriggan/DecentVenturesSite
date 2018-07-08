@@ -1,6 +1,5 @@
 {
-  "name": "minimalist-react-personal-site",
-  "homepage": "http://micahriggan.github.io/minimalist-react-personal-site",
+  "name": "decent-ventures-site",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
