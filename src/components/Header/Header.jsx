@@ -15,9 +15,9 @@ export default function(props) {
         document.title = `${currentPage.name} - ${config.siteName}`;
       }
 
-      let link =
-        page !== currentPage ? (
-          <a href={"./" + page.url}>{page.name}</a>
+      let ref = url ? "./" : "";
+      let link = page !== currentPage ? (
+          <a href={ref + page.url}>{page.name}</a>
         ) : (
           page.name
         );
