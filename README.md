@@ -8,11 +8,14 @@ Make sure the url is present in the router on pages/App/App.js
 ```
 module.exports = {
   siteName: 'Decent Ventures',
+  github: 'https://github.com/micahriggan',
+  twitter: 'https://twitter.com/micahriggan',
   pages: [
     {
       name: "Projects",
       url: "/",
-      logo: "logo.svg"
+      logo: "logo.svg",
+      disabled: true
     },
     {
       name: "Courses",
@@ -25,32 +28,57 @@ module.exports = {
       logo: "axo.png"
     },
   ]
-};
-```
+};```
 
 # Logos
 All of the page logos must be in src/resources 
 
 
-# Adding new content to a page
-The AppList component can display basic content from a JSON object.
-<AppList list={myList} />
+# Creating a new Page
+
 ```
-[{
-    name: "When I retire...",
-    url: "https://medium.com/@micahriggan/when-i-retire-i-will-c9e363064086",
-    actionUrl: "https://medium.com/@micahriggan/when-i-retire-i-will-c9e363064086",
-    desc: `Tonight I was thinking about long term goals.`
-  }]
+import React from "react";
+import Posts from "../../components/Posts/Posts";
+import Header from "../../components/Header/Header";
+import blogs from "../../constants/blogs";
+export default function(props) {
+  const blogLink = url => (url ? <a href={url}>Read More on Medium</a> : "");
+
+  return (
+    <div>
+      <Header path={props.location.pathname} />
+      <Posts list={blogs} action={blogLink} />
+    </div>
+  );  
+}
 ```
 
-Feel free to replace the content in blog.js, apps.js or courses.js with your own content and rename the pages in config.js
+This is an example of how to create a blog page with the Posts component.
+
+Actions are functions that take in the actionUrl property of a post, and return some content
+
+## Steps to add a new page
+
+* Create a page in src/pages/
+* Add the page to src/constants/config.js
+* Add the page to the router in src/pages/App/App.js
+  * Make sure the url for the router matches what you put in config
+
+## Disabling pages
+If you set disabled: true a page will not show in the menu
 
 
-# ActionUrl
-Each element can have an actionURL, this data that can be passed into an action function. 
+# Adding a new post to a page
+This is an example post
+```
+  {
+    name: "Eth Dapps",
+    logo: "images/color_logo_transparent.svg",
+    url: "https://github.com/DecentVentures/ethdapps",
+    actionUrl: "https://github.com/DecentVentures/ethdapps",
+    desc: `A dapp that collects links and descriptions of ethereum dapps`
+  },
+```
 
-An action function is a function that gets called for each element of the list and can output
-some content that will display at the bottom of each post
-
-See src/pages/Courses/Courses.js for an example of how to add a button to the end of each post
+* Go to the constants file that is being loaded into your page
+* Append an object that has the properties above
