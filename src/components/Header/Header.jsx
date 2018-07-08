@@ -1,28 +1,27 @@
 import React from "react";
 import "./Header.css";
+import { Link } from "react-router-dom";
 import config from "../../constants/config";
-
+const url = process.env.PUBLIC_URL;
 export default function(props) {
   let currentPage;
   let links = [];
   let logo = "";
   for (let page of config.pages) {
     if (!page.disabled) {
-      if (page.url === props.path) {
+      if (props.path.endsWith(page.url)) {
         currentPage = page;
         logo = require(`../../resources/${currentPage.logo}`);
         document.title = `${currentPage.name} - ${config.siteName}`;
       }
 
       let link = page !== currentPage ? (
-          <a href={page.url}>{page.name}</a>
-      ) : page.name;
- 
-      links.push(
-        <span>
-        {link}
-        </span>
-      );
+          <Link to={page.url}>{page.name}</Link>
+        ) : (
+          page.name
+        );
+
+      links.push(<span>{link}</span>);
     }
   }
   return (
