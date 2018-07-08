@@ -9,14 +9,14 @@ export default function(props) {
   let logo = "";
   for (let page of config.pages) {
     if (!page.disabled) {
-      if (url + page.url === props.path) {
+      if (props.path.endsWith(page.url)) {
         currentPage = page;
         logo = require(`../../resources/${currentPage.logo}`);
         document.title = `${currentPage.name} - ${config.siteName}`;
       }
 
       let link = page !== currentPage ? (
-          <Link to={page.url}>{page.name}</Link>
+          <a href={url + page.url}>{page.name}</a>
       ) : page.name;
  
       links.push(
