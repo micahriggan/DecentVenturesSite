@@ -9,16 +9,21 @@ export default function(props) {
   let logo = "";
   for (let page of config.pages) {
     if (!page.disabled) {
+      if (page.url === props.path) {
+        currentPage = page;
+        logo = require(`../../resources/${currentPage.logo}`);
+        document.title = `${currentPage.name} - ${config.siteName}`;
+      }
+
+      let link = page !== currentPage ? (
+          <a href={page.url}>{page.name}</a>
+      ) : page.name;
+ 
       links.push(
         <span>
-          <a href={page.url}>{page.name}</a>
+        {link}
         </span>
       );
-    }
-    if (page.url === props.path) {
-      currentPage = page;
-      logo = require(`../../resources/${currentPage.logo}`);
-      document.title = `${currentPage.name} - ${config.siteName}`;
     }
   }
   return (
