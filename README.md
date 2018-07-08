@@ -1,6 +1,9 @@
 # Purpose
 This is my personal site, but it's pretty configurable. My goal is to make it pretty simple to add new content or list pages
 
+# Example
+https://micahriggan.github.io/minimalist-react-personal-site/
+
 # Updating Menu / Page Names 
 The page names are stored in src/constants/config.js
 If you add a page, or want to change a logo, you'll need to edit this file

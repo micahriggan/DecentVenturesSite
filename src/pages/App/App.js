@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { createBrowserHistory } from "history";
 
 import "./App.css";
@@ -10,18 +10,19 @@ import Courses from "../Courses/Courses";
 
 
 
+const url = process.env.PUBLIC_URL;
 const customHistory = createBrowserHistory();
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Router history={customHistory}>
+        <BrowserRouter history={customHistory}>
           <Switch>
-            <Route exact path="/" component={Posts} />
-            <Route exact path="/blog" component={Blogs} />
-            <Route exact path="/courses" component={Courses} />
+            <Route exact path={url + "/"} component={Posts} />
+            <Route exact path={url + "/blog"} component={Blogs} />
+            <Route exact path={url + "/courses"} component={Courses} />
           </Switch>
-        </Router>
+        </BrowserRouter>
         <Footer />
       </div>
     );
