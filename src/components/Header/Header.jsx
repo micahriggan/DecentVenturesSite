@@ -9,7 +9,7 @@ export default function(props) {
   let logo = "";
   for (let page of config.pages) {
     if (!page.disabled) {
-      if (page.url === props.path) {
+      if (url + page.url === props.path) {
         currentPage = page;
         logo = require(`../../resources/${currentPage.logo}`);
         document.title = `${currentPage.name} - ${config.siteName}`;
