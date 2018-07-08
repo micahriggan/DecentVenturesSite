@@ -28,7 +28,8 @@ module.exports = {
       logo: "axo.png"
     },
   ]
-};```
+};
+```
 
 # Logos
 All of the page logos must be in src/resources 
