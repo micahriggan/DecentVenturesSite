@@ -1,0 +1,14 @@
+.courseButton {
+  background-color: #ec5252;
+  color: #fff;
+  height: 50px;
+  border: none;
+  font-size: 1em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 15px;
+}
+.courseButton:hover {
+  background-color: #992437;
+  cursor: pointer;
+  color: #000;
+}
