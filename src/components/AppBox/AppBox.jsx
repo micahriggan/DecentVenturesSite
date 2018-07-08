@@ -2,27 +2,23 @@ import * as React from "react";
 import "./AppBox.css";
 
 const AppBox = props => {
-  const githubLink = props.github ? (
-    <a href={props.github}>
-      <img height="32" src="images/github.svg" />
-    </a>
-  ) : (
-    ""
-  );
   const appBox = (
     <div class="appname">
       <div class="appNameText">{props.name}</div>
     </div>
   );
 
-  const appLink = props.url ? <a href={props.url}>{appBox}</a> : appBox;
   return (
     <div class="appbox">
-      <div class="logo">
-        <img src={props.logo} height="200" />
+      <div>
+        <a href={props.url}><h1>{props.name}</h1></a>
       </div>
-      <div class="github">{githubLink}</div>
-      {appLink}
+      <p>
+        <span>{props.desc}</span>
+      </p>
+      <div>
+        <span>{props.action ?  props.action(props.actionUrl) : ''}</span>
+      </div>
     </div>
   );
 };

@@ -1,0 +1,13 @@
+.Header-logo {
+  height: 150px;
+}
+
+.Header-links {
+  text-align: center;
+  margin: 15px;
+  font-size: 1.5em;
+}
+
+.Header-links > span {
+  padding: 5px;
+}

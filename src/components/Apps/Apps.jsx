@@ -5,15 +5,9 @@ import "./Apps.css";
 
 class Apps extends React.Component {
   render() {
-    let AppComponents = AppList.map(app => {
-      return (
-        <AppBox
-          name={app.name}
-          logo={app.logo}
-          github={app.github}
-          url={app.url}
-        />
-      );
+    let toList = this.props.list || AppList;
+    let AppComponents = toList.map(app => {
+      return <AppBox {...app} action={this.props.action} />;
     });
     return <div class="Apps">{AppComponents}</div>;
   }
