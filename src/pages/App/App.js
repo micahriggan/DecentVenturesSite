@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Router, Switch, Route } from "react-router-dom";
 import { createBrowserHistory } from "history";
 
-import logo from "../../resources/color_logo_transparent.svg";
 import "./App.css";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
@@ -17,7 +16,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
         <Router history={customHistory}>
           <Switch>
             <Route exact path="/" component={Apps} />

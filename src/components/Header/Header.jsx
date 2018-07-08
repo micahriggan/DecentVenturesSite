@@ -1,22 +1,30 @@
-import logo from "../../resources/color_logo_transparent.svg";
+import logo from "../../resources/logo.svg";
 import React from "react";
 import "./Header.css";
+import config from "../../constants/config";
 
 export default function(props) {
+  let currentPage;
+  let links = [];
+  let logo = "";
+  for (let page of config.pages) {
+    if (!page.disabled) {
+      links.push(
+        <span>
+          <a href={page.url}>{page.name}</a>
+        </span>
+      );
+    }
+    if (page.url === props.path) {
+      currentPage = page;
+      logo = require(`../../resources/${currentPage.logo}`);
+      document.title = `${currentPage.name} - ${config.siteName}`;
+    }
+  }
   return (
     <header class="Header">
       <img src={logo} className="Header-logo" alt="logo" />
-      <div class="Header-links">
-        <span>
-          <a href="/">Code</a>
-        </span>
-        <span>
-          <a href="/blog">Blog</a>
-        </span>
-        <span>
-          <a href="/courses">Courses</a>
-        </span>
-      </div>
+      <div class="Header-links"> {links} </div>
     </header>
   );
 }

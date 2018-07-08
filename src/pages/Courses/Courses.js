@@ -1,6 +1,7 @@
 import blogs from "../../constants/courses";
 import React from "react";
 import AppList from "../../components/Apps/Apps";
+import Header from "../../components/Header/Header";
 import courses from "../../constants/courses";
 import "./Courses.css";
 export default function(props) {
@@ -12,5 +13,10 @@ export default function(props) {
     ) : (
       ""
     );
-  return <AppList list={courses} action={courseLink} />;
+  return (
+    <div>
+      <Header path={props.location.pathname} />
+      <AppList list={courses} action={courseLink} />
+    </div>
+  );
 }
