@@ -58,6 +58,18 @@ This is an example of how to create a blog page with the Posts component.
 
 Actions are functions that take in the actionUrl property of a post, and return some content
 
+```
+// Edit the router in src/pages/App/App.js
+<Router history={customHistory}>
+  <Switch>
+    <Route exact path="/" component={Posts} />
+    <Route exact path="/blog" component={Blogs} />
+    <Route exact path="/courses" component={Courses} />
+  </Switch>
+</Router>
+
+```
+
 ## Steps to add a new page
 
 * Create a page in src/pages/
@@ -87,4 +99,5 @@ This is an example post
 
 # Using with s3 bucket, or static file hosting
 If you use something like an s3 bucket, you may need to set the error page as index.html
+
 This is because you will get a 404 when different links are clicked, since this project uses react-router
