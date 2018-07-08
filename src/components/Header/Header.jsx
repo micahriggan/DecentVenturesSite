@@ -1,6 +1,6 @@
 import React from "react";
 import "./Header.css";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 import config from "../../constants/config";
 const url = process.env.PUBLIC_URL;
 export default function(props) {
@@ -15,15 +15,14 @@ export default function(props) {
         document.title = `${currentPage.name} - ${config.siteName}`;
       }
 
-      let link = page !== currentPage ? (
-          <a href={url + page.url}>{page.name}</a>
-      ) : page.name;
- 
-      links.push(
-        <span>
-        {link}
-        </span>
-      );
+      let link =
+        page !== currentPage ? (
+          <a href={"./" + page.url}>{page.name}</a>
+        ) : (
+          page.name
+        );
+
+      links.push(<span>{link}</span>);
     }
   }
   return (
