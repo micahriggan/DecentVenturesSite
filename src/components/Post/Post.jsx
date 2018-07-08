@@ -1,15 +1,9 @@
 import * as React from "react";
-import "./AppBox.css";
+import "./Post.css";
 
-const AppBox = props => {
-  const appBox = (
-    <div class="appname">
-      <div class="appNameText">{props.name}</div>
-    </div>
-  );
-
+const Post = props => {
   return (
-    <div class="appbox">
+    <div class="post">
       <div>
         <a href={props.url}><h1>{props.name}</h1></a>
       </div>
@@ -23,5 +17,5 @@ const AppBox = props => {
   );
 };
 
-export default AppBox;
-//<AppBox logo={someLogo} name={someName} />
+export default Post;
+//<Post logo={someLogo} name={someName} />

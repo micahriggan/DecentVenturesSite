@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../../components/Header/Header";
-import AppList from "../../components/Apps/Apps";
+import AppList from "../../components/Posts/Posts";
 
 export default function(props) {
   const githubLink = url =>
