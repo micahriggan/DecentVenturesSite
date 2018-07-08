@@ -1,7 +1,8 @@
 import React from "react";
 import "./Header.css";
+import {Link} from 'react-router-dom';
 import config from "../../constants/config";
-
+const url = process.env.PUBLIC_URL;
 export default function(props) {
   let currentPage;
   let links = [];
@@ -15,7 +16,7 @@ export default function(props) {
       }
 
       let link = page !== currentPage ? (
-          <a href={page.url}>{page.name}</a>
+          <Link to={page.url}>{page.name}</Link>
       ) : page.name;
  
       links.push(
